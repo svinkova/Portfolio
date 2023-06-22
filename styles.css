@@ -133,6 +133,7 @@ nav.sticky {/* Styly pro menu fixní */
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
+    z-index: 999;
 }
 
 nav.sticky .sticky-logo-text {
@@ -145,3 +146,41 @@ nav.sticky .sticky-logo-text {
 
 /*******MENU - end*******/
 
+/*******MAIN - start*******/
+main {
+    width: 80%;
+    margin: 48px auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 32px;
+}
+
+.article {
+    width: 48%;
+    min-width: 300px;
+    background: #fff;
+    margin: 0 0 16px;
+    padding: 16px;
+    position: relative;
+    font-size: 0.9rem;
+    line-height: 1.4rem;
+}
+
+.article:before, .article:after {
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15) 50%, rgba(0, 0, 0, 0) 100%) 5%;
+    content: '';
+    display: block;
+    right: 0;
+    left: 0;
+    position: absolute;
+    height: 1px;
+}
+.article:before {
+    top: 0;
+}
+
+.article:after {
+    bottom: 0;
+}
