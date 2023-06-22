@@ -10,8 +10,10 @@ body {
     background-color: #f7f7f7;
     font-family: 'Open Sans', sans-serif;
     font-size: 1rem;
+    height: 200vh;
 }
 
+/*******HEADER - start*******/
 .nav-top {
     height: 40px;
     background-color: #efefef;
@@ -74,7 +76,12 @@ body {
     margin-top: 9px;
 }
 
+/*******HEADER - end*******/
+
+/*******MENU - start*******/
 nav {
+    position: sticky;
+    top: 0px;
     background-color: #bc60e3;
     width: 100%;
     margin: 0 auto;
@@ -82,6 +89,13 @@ nav {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+}
+
+@media
+(prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 .nav-list {
@@ -106,3 +120,5 @@ nav {
     background: #fff;
     transition: all .25s ease-out;
 }
+/*******MENU - end*******/
+
