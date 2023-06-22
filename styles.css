@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inspiration&family=Open+Sans:wght@300;400;600;700&display=swap');
 
 * {
     margin: 0;
@@ -8,33 +8,78 @@
 
 body {
     background-color: #f7f7f7;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-size: 1rem;
 }
 
-.nav-container {
+.nav-top {
     height: 40px;
     background-color: #efefef;
     border-bottom: 1px solid #e4e4e4;
 }
 
-.nav-social {
-
+.nav-container {
+    width: 80%;
+    height: 40px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
-.nav-contact {
-
+.nav-contact a {
+    font-size: 0.8rem;
+    color: #bc60e3;
+    text-decoration: none; 
 }
 
-.nav-logo {
+.nav-contact, .nav-social {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav-social a {
+    height: 24px;
+}
+
+.nav-social img {
+    height: 24px;
+}
+
+.nav-logo-container {
+    width: 60%;
+    height: 125px;
+    margin: 0px auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-text {
+    font-family: 'Inspiration', cursive;
+    font-size: 5rem;
+    color: #bc60e3;
+}
+
+.logo-pic {
+    align-self: auto;
+}
+
+.nav-logo-container img {
     height: 120px;
+    margin-top: 9px;
 }
 
 nav {
-    background-color: rgb(188, 96, 227);
-    height: 60px;
+    background-color: #bc60e3;
+    width: 100%;
+    margin: 0 auto;
     display: flex;
-    flex-direction: row;;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
 }
@@ -46,9 +91,18 @@ nav {
     list-style: none;
 } 
 
-.nav-list a {
+.nav-list li a {
+    padding: 16px;
+    display: block;
     text-decoration: none;
-    color: white;
     text-transform: uppercase;
-    font-size: 1.1rem;
+    font-size: 1rem;
+    color: white;
+    white-space: nowrap;
+}
+
+.nav-list li a:hover,.nav-list li:hover>a {
+    color: #bc60e3;
+    background: #fff;
+    transition: all .25s ease-out;
 }
