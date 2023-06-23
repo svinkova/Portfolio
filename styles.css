@@ -168,7 +168,7 @@ main {
     line-height: 1.4rem;
 }
 
-.article:before, .article:after {
+.article::before, .article::after {
     background: linear-gradient(90deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15) 50%, rgba(0, 0, 0, 0) 100%) 5%;
     content: '';
     display: block;
@@ -177,14 +177,99 @@ main {
     position: absolute;
     height: 1px;
 }
-.article:before {
+.article::before {
     top: 0;
 }
 
-.article:after {
+.article::after {
     bottom: 0;
 }
 
 .article h1, h2 {
     margin: 1rem 0;
 }
+
+footer {
+    position: relative;
+}
+
+footer svg path{
+    width: 100%;
+    height: 200px;
+}
+
+.footer-content {
+    width: 100%;
+    position: absolute;
+    top: 200px; /* odpovídá výšce SVG  - upravit při responzivitě*/
+    background-color: #bc60e3;
+    color: #fff;
+  }
+  
+.footer-container {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 32px;
+    padding: 32px 0;
+}
+
+.footer-contact {
+    font-size: 0.8rem;
+    line-height: 1.5rem;
+    align-self: flex-end;
+}
+
+.footer-contact ul {
+ list-style: none;
+} 
+
+.footer-social {
+    border-top: 1px solid #fff;
+    padding-top: 16px;
+    align-self: flex-end;
+}
+
+.footer-social ul {
+    color: #fff;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+}
+
+
+.footer-social li a {
+    text-decoration: none;
+    color: #fff;
+    line-height: 3rem;
+}
+
+.footer-social img {
+    height: 24px;
+}
+
+.footer-logo-text {
+    color: #fff;
+    font-family: 'Inspiration', cursive;
+    font-size: 2.4rem;
+    padding-bottom: 32px;
+}
+
+.footer-desc {
+    line-height: 1.5rem;
+    align-self: flex-end;
+}
+
+.footer-desc ul {
+    list-style: none;
+}
+
+.footer-desc ul li {
+    font-size: 0.8rem;
+    list-style: none;
+}
+
+
