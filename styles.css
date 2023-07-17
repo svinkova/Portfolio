@@ -366,54 +366,101 @@ nav.sticky .sticky-logo-text {
 }
 
 .reference {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-
-.image-container {
     position: relative;
-    display: inline-block;
+    padding: 20px;
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Přidáno pro vyrovnání karet */
 }
 
-.img-reference {
-    width: 350px;
+.card {
+    width: 325px;
+    margin-bottom: 20px; /* Přidáno pro mezery mezi kartami */
+    position: relative;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, .2);
+    cursor: pointer;
 }
 
-.reference-text {
-    color: var(--second-color);
-    font-weight: 700;
-    display: block;
-    font-size: 0.9rem;
-    margin-bottom: 1rem;
+.poster {
+    position: relative;
+    padding-bottom: 75%; /* Poměr stran obrázku */
+    width: 100%;
+    height: 0;
+    overflow: hidden;
 }
 
-.overlay {
+.poster::before {
+    content: '';
+    position: absolute;
+    bottom: -45%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    transition: 0.3s;
+}
+
+.card:hover .poster::before {
+    bottom: 0;
+}
+
+.poster img {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    background: linear-gradient(to bottom, var(--overlay-prime-color) 80%, var(--overlay-second-color) 80%);
-    opacity: 0;
-    transition: opacity 0.5s;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    pointer-events: none; /* Předejde překrývání interakce s obrázkem */
-  }
+    object-fit: cover;
+    transition: 0.3s;
+}
 
-.overlay-text {
+.card:hover .poster img {
+    transform: scale(1.05);
+}
+
+.details {
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    height: 75%;
+    padding: 1.5em 1.5em 2em;
+    background: var(--overlay-prime-color);
+    transition: .3s;
     color: #fff;
-    font-size: 1rem;
-    text-align: center;
-    align-self: start;
-    padding: 2rem;
-  }
+    z-index: 2;
+}
 
-.image-container:hover .overlay {
-    opacity: 1;
-  } 
+.card:hover .details {
+    bottom: 0;
+}
+
+.details h1,
+.details h2 {
+    font-weight: 700;
+}
+
+.details h1 {
+    font-size: 1.1em;
+    margin-bottom: 5px;
+}
+
+.details .desc {
+    color: #fff;
+    font-size: 0.8em;
+    line-height: 1.5;
+    margin-bottom: 1em;
+}
+
+.details .web h3 {
+    font-size: 0.7em;
+    margin-bottom: .5em;
+    color: #fff;
+}
+
+
 
 
 /*******MAIN - end*******/
