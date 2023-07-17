@@ -6,12 +6,114 @@
     box-sizing: border-box;
 }
 
+:root {
+    --prime-color: #566589;
+    --second-color: #f87537;
+    --bg-color: #f7f7f7;
+    --nav-top-color: #efefef;
+    --border-bottom-color: #e4e4e4;
+    --text-color: #566589;
+    --overlay-prime-color: rgb(86, 101, 137, 0.9);
+    --overlay-second-color: rgb(248, 117, 55, 0.1);
+  }
+
 body {
-    background-color: #f7f7f7;
+    background-color: var(--bg-color);
     font-family: 'Open Sans', sans-serif;
     font-size: 1rem;
-    /*height: 200vh;*/
 }
+
+h1 {
+    color: var(--second-color);
+}
+
+h2, h3 {
+    color: var(--prime-color);
+    display: block;
+}
+
+/* Button CTA */
+.btn-cta {
+    cursor: pointer;
+    padding: 1rem 2rem;
+    margin: 1rem;
+    color: var(--second-color);
+    font-size: 1rem;
+    border: 2px solid var(--second-color);
+    vertical-align: middle;
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    position: absolute;
+    bottom: 0rem;
+    right: 1rem;
+    background: #fff;
+    transition-property: color;
+    transition-duration: 0.3s;
+    float: right;
+  }
+
+  .btn-cta:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--second-color);
+    color: #fff;
+    transform: scaleX(0);
+    transform-origin: 50%;
+    transition-property: transform;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+  }
+
+  /* BUTTON ABOUT */
+
+  .btn-about {
+    cursor: pointer;
+    padding: 1rem 2rem;
+    margin: 1rem;
+    color: var(--prime-color);
+    font-size: 1rem;
+    border: 2px solid var(--prime-color);
+    vertical-align: middle;
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    position: absolute;
+    bottom: 0rem;
+    right: 1rem;
+    background: #fff;
+    transition-property: color;
+    transition-duration: 0.3s;
+  }
+
+  .btn-about:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--prime-color);
+    color: #fff;
+    transform: scaleX(0);
+    transform-origin: 50%;
+    transition-property: transform;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+  }
+
+  .btn-cta:hover, .btn-cta:focus, .btn-cta:active, .btn-about:hover, .btn-about:focus, .btn-about:active {
+    color: white;
+  }
+
+  .btn-cta:hover:before, .btn-cta:focus:before, .btn-cta:active:before, .btn-about:hover:before, .btn-about:focus:before, .btn-about:active:before {
+    transform: scaleX(1);
+  }
+
 
 /*******HEADER - start*******/
 .nav-top {
@@ -31,7 +133,7 @@ body {
 
 .nav-contact a {
     font-size: 0.8rem;
-    color: #bc60e3;
+    color: var(--second-color);
     text-decoration: none; 
 }
 
@@ -52,7 +154,7 @@ body {
 }
 
 .nav-logo-container {
-    width: 60%;
+    width: 80%;
     height: 125px;
     margin: 0px auto;
     display: flex;
@@ -64,7 +166,7 @@ body {
 .logo-text {
     font-family: 'Inspiration', cursive;
     font-size: 5rem;
-    color: #bc60e3;
+    color: var(--prime-color);
 }
 
 .logo-pic {
@@ -82,7 +184,7 @@ body {
 nav {
     position: sticky;
     top: 0px;
-    background-color: #bc60e3;
+    background-color: var(--prime-color);
     width: 100%;
     margin: 0 auto;
     display: flex;
@@ -116,8 +218,8 @@ nav {
 }
 
 .nav-list li a:hover,.nav-list li:hover>a {
-    color: #bc60e3;
-    background: #fff;
+    color: #fff;
+    background: var(--second-color);
     transition: all .25s ease-out;
 }
 
@@ -126,7 +228,7 @@ nav {
 }
 
 nav.sticky {/* Styly pro menu fixní */
-    background-color: #bc60e3;
+    background-color: var(--prime-color);
     width: 100%;
     margin: 0 auto;
     display: flex;
@@ -147,7 +249,7 @@ nav.sticky .sticky-logo-text {
 /*******MENU - end*******/
 
 /*******MAIN - start*******/
-main {
+.main-article {
     width: 80%;
     margin: 48px auto;
     display: flex;
@@ -162,7 +264,7 @@ main {
     min-width: 300px;
     background: #fff;
     margin: 0 0 16px;
-    padding: 16px;
+    padding: 16px 16px 0 16px;
     position: relative;
     font-size: 0.9rem;
     line-height: 1.4rem;
@@ -189,21 +291,148 @@ main {
     margin: 1rem 0;
 }
 
-footer {
-    position: relative;
+.article-content {
+    display: flex;
+    flex-direction: row;
 }
 
-footer svg path{
+.article-text {
+    display: flex;
+    align-items: start;
+}
+
+.article-image {
+    margin: 0px;
+}
+
+.img-girl {
+    width: 120px;
+    margin: 8px 8px 0 8px;
+}
+
+.main-tools {
+    width: 80%;
+    margin: 48px auto;
+    text-align: center;
+}
+
+.main-tools::after {
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15) 50%, rgba(0, 0, 0, 0) 100%) 5%;
+    content: '';
+    display: block;
+    right: 0;
+    left: 0;
+    position: absolute;
+    height: 1px;
+}
+
+.svg-tools {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3rem;
+    margin: 32px 0 32px 0;
+}
+
+.svg-tools path {
+    fill: var(--prime-color);
+}
+
+.svg-container {
+    width: 50px;
+    height: 50px;
+}
+
+.svg-text {
+    color: var(--second-color);
+    font-weight: 700;
+    display: none;
+    font-size: 0.75rem;
+  }
+  
+.svg-container:hover .svg-text {
+    display: block;
+  }
+
+.main-reference {
+    width: 80%;
+    margin: 64px auto;
+    text-align: center;
+}
+
+.main-reference h2 {
+    color: var(--second-color);
+}
+
+.reference {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.image-container {
+    position: relative;
+    display: inline-block;
+}
+
+.img-reference {
+    width: 350px;
+}
+
+.reference-text {
+    color: var(--second-color);
+    font-weight: 700;
+    display: block;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 200px;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--overlay-prime-color) 80%, var(--overlay-second-color) 80%);
+    opacity: 0;
+    transition: opacity 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none; /* Předejde překrývání interakce s obrázkem */
+  }
+
+.overlay-text {
+    color: #fff;
+    font-size: 1rem;
+    text-align: center;
+    align-self: start;
+    padding: 2rem;
+  }
+
+.image-container:hover .overlay {
+    opacity: 1;
+  } 
+
+
+/*******MAIN - end*******/
+
+/*******FOOTER - start*******/
+
+footer {
+/**    position: relative; platí pro svg **/
+
 }
 
 .footer-content {
     width: 100%;
-    position: absolute;
-    top: 200px; /* odpovídá výšce SVG  - upravit při responzivitě*/
-    background-color: #bc60e3;
+/** position: absolute;
+    bottom: -20px;
+    overflow: hidden; platí pro svg **/
+    background-color: var(--prime-color);
     color: #fff;
+
   }
   
 .footer-container {
@@ -213,8 +442,10 @@ footer svg path{
     flex-direction: row;
     justify-content: space-between;
     gap: 32px;
-    padding: 32px 0;
+    padding-bottom: 32px;
 }
+
+
 
 .footer-contact {
     font-size: 0.8rem;
@@ -223,12 +454,10 @@ footer svg path{
 }
 
 .footer-contact ul {
- list-style: none;
+    list-style: none;
 } 
 
 .footer-social {
-    border-top: 1px solid #fff;
-    padding-top: 16px;
     align-self: flex-end;
 }
 
@@ -240,22 +469,23 @@ footer svg path{
     gap: 32px;
 }
 
-
 .footer-social li a {
     text-decoration: none;
     color: #fff;
-    line-height: 3rem;
 }
 
 .footer-social img {
     height: 24px;
+    margin-top: 16px;
 }
 
 .footer-logo-text {
+    border-bottom: 1px solid #fff;
     color: #fff;
     font-family: 'Inspiration', cursive;
     font-size: 2.4rem;
-    padding-bottom: 32px;
+    text-align: center;
+    padding: 8px 0;
 }
 
 .footer-desc {
