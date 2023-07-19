@@ -552,4 +552,44 @@ nav.sticky .sticky-logo-text {
     list-style: none;
 }
 
+.icon-container {
+    margin: 1rem;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    border-radius: 50%;
+    transition: width 0.3s ease, height 0.3s ease;
+}
+
+.icon-container:hover {
+    width: 50%;
+    height: 50%;
+}
+
+.icon-svg {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.3s ease;
+}
+
+.icon-container:hover .icon-svg {
+    transform: scale(1.5);
+}
+
+.icon-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: var(--prime-color);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.icon-container:hover::before {
+    opacity: 1;
+}
 
