@@ -21,6 +21,8 @@ body {
     background-color: var(--bg-color);
     font-family: 'Open Sans', sans-serif;
     font-size: 1rem;
+    color: var(--text-color);
+    font-size: 0.9rem;
 }
 
 h1 {
@@ -291,6 +293,10 @@ nav.sticky .sticky-logo-text {
     margin: 1rem 0;
 }
 
+.article p {
+    padding: 1rem;
+}
+
 .article-content {
     display: flex;
     flex-direction: row;
@@ -361,7 +367,7 @@ nav.sticky .sticky-logo-text {
     text-align: center;
 }
 
-.main-reference h2 {
+.main-reference h3 {
     color: var(--second-color);
 }
 
@@ -378,7 +384,7 @@ nav.sticky .sticky-logo-text {
     width: 325px;
     margin-bottom: 20px; /* Přidáno pro mezery mezi kartami */
     position: relative;
-    border-radius: 18px;
+
     overflow: hidden;
     box-shadow: 0 10px 10px rgba(0, 0, 0, .2);
     cursor: pointer;
@@ -449,13 +455,12 @@ nav.sticky .sticky-logo-text {
 
 .details .desc {
     color: #fff;
-    font-size: 0.8em;
     line-height: 1.5;
     margin-bottom: 1em;
 }
 
 .details .web h3 {
-    font-size: 0.7em;
+    font-size: 0.8em;
     margin-bottom: .5em;
     color: #fff;
 }
@@ -467,10 +472,9 @@ nav.sticky .sticky-logo-text {
 
 /*******FOOTER - start*******/
 
-footer {
-/**    position: relative; platí pro svg **/
-
-}
+/**footer {
+    position: relative; platí pro svg 
+}**/
 
 .footer-content {
     width: 100%;
@@ -479,7 +483,6 @@ footer {
     overflow: hidden; platí pro svg **/
     background-color: var(--prime-color);
     color: #fff;
-
   }
   
 .footer-container {
