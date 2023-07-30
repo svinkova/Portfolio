@@ -356,7 +356,12 @@ nav.sticky .sticky-logo-text {
     display: none;
     font-size: 0.75rem;
   }
-  
+
+.svg-container:hover {
+    transform: scale(1.1);
+
+}
+
 .svg-container:hover .svg-text {
     display: block;
   }
@@ -380,90 +385,81 @@ nav.sticky .sticky-logo-text {
     justify-content: space-between; /* Přidáno pro vyrovnání karet */
 }
 
-.card {
-    width: 325px;
-    margin-bottom: 20px; /* Přidáno pro mezery mezi kartami */
-    position: relative;
 
-    overflow: hidden;
+/* Styly pro kontejner pro efekt otočení */
+.flip-container {
+    perspective: 1000px; /* Nastavuje perspektivu pro 3D efekty */
+  }
+  
+  .flipper {
+    width: 325px; /* Nastaví šířku pro otočení */
+    height: 200px; /* Nastaví výšku pro otočení */
+    position: relative;
+    transform-style: preserve-3d; /* Umožní zachovat 3D efekt pro potomky */
+    transition: transform 0.6s; /* Přidá plynulý přechod pro otočení */
+  }
+  
+  /* Styly pro přední stranu (obrázek) */
+  .front,
+  .back {
+    background-color: var(--nav-top-color);
     box-shadow: 0 10px 10px rgba(0, 0, 0, .2);
     cursor: pointer;
-}
-
-.poster {
-    position: relative;
-    padding-bottom: 75%; /* Poměr stran obrázku */
-    width: 100%;
-    height: 0;
-    overflow: hidden;
-}
-
-.poster::before {
-    content: '';
     position: absolute;
-    bottom: -45%;
-    left: 0;
     width: 100%;
     height: 100%;
-    z-index: 1;
-    transition: 0.3s;
-}
+    backface-visibility: hidden; /* Skryje zadní stranu, když je obrázek na přední straně */
+  }
+  
+  .front img {
+    width: 325px;
+  }
 
-.card:hover .poster::before {
-    bottom: 0;
-}
+  .front {
+    z-index: 2; /* Umožní přední straně být nad zadní stranou */
+  }
+  
+  /* Styly pro zadní stranu (karta s popisem a textem) */
+  .back {
+    padding: 1rem;
+    display: flex; /* Použije flexbox pro zarovnání obsahu */
+    flex-direction: column;
+    justify-content: center; /* Zarovná obsah na střed horizontálně */
+    align-items: center; /* Zarovná obsah na střed vertikálně */
+    transform: rotateY(180deg); /* Převrátí zadní stranu */
+  }
+  
+  /* Styly pro hover (při najetí myši) - efekt otočení */
+  .flip-container:hover .flipper {
+    transform: rotateY(180deg);
+  }
 
-.poster img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    object-fit: cover;
-    transition: 0.3s;
-}
+  .back h1,
+  .back h2 {
+      font-weight: 700;
+  }
+  
+  .back h1 {
+      font-size: 1.1em;
+      margin-bottom: 5px;
+  }
+  
+  .back .desc {
+      color: var(--text-color);
+      line-height: 1.5;
+      margin-bottom: 1em;
+  }
+  
+  .back .web h3 {
+      font-size: 0.8em;
+      margin-bottom: .5em;
+      color: var(--text-color);
+  }
 
-.card:hover .poster img {
-    transform: scale(1.05);
-}
 
-.details {
-    position: absolute;
-    bottom: -100%;
-    left: 0;
-    width: 100%;
-    height: 75%;
-    padding: 1.5em 1.5em 2em;
-    background: var(--overlay-prime-color);
-    transition: .3s;
-    color: #fff;
-    z-index: 2;
-}
 
-.card:hover .details {
-    bottom: 0;
-}
 
-.details h1,
-.details h2 {
-    font-weight: 700;
-}
 
-.details h1 {
-    font-size: 1.1em;
-    margin-bottom: 5px;
-}
-
-.details .desc {
-    color: #fff;
-    line-height: 1.5;
-    margin-bottom: 1em;
-}
-
-.details .web h3 {
-    font-size: 0.8em;
-    margin-bottom: .5em;
-    color: #fff;
-}
 
 
 
